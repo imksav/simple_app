@@ -3,8 +3,6 @@ import 'package:simple_app/gradeXII/subject_page_science_xii.dart';
 import 'package:simple_app/gradeXII/subject_page_management_xii.dart';
 import 'package:simple_app/gradeXII/subject_page_humanities_xii.dart';
 
-
-
 class FacultyPageXII extends StatelessWidget {
   final String grade;
 
@@ -14,9 +12,95 @@ class FacultyPageXII extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
+        centerTitle: true,
         title: new Text(grade),
       ),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              // For Science.................
+              Card(
+                child: ListTile(
+                  leading: Icon(
+                    Icons.mail,
+                    color: Colors.red,
+                  ),
+                  title: Text(
+                    "Science",
+                    style: TextStyle(
+                      fontSize: 20.0,
+                    ),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).pop();
+                    Navigator.of(context).push(
+                      new MaterialPageRoute(
+                        builder: (BuildContext context) =>
+                            new SubjectPageScienceXII("Science"),
+                      ),
+                    );
+                  },
+                ),
+              ),
+              // For Management.................
+              Card(
+                child: ListTile(
+                  leading: Icon(
+                    Icons.mail,
+                    color: Colors.red,
+                  ),
+                  title: Text(
+                    "Management",
+                    style: TextStyle(
+                      fontSize: 20.0,
+                    ),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).pop();
+                    Navigator.of(context).push(
+                      new MaterialPageRoute(
+                        builder: (BuildContext context) =>
+                            new SubjectPageManagementXII("Management"),
+                      ),
+                    );
+                  },
+                ),
+              ),
+              // For Humanities.................
+              Card(
+                child: ListTile(
+                  leading: Icon(
+                    Icons.mail,
+                    color: Colors.red,
+                  ),
+                  title: Text(
+                    "Humanities",
+                    style: TextStyle(
+                      fontSize: 20.0,
+                    ),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).pop();
+                    Navigator.of(context).push(
+                      new MaterialPageRoute(
+                        builder: (BuildContext context) =>
+                            new SubjectPageHumanitiesXII("Humanities"),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
 
+/*
         body: Center(
         child: ListView(
   padding: const EdgeInsets.all(8),
@@ -41,7 +125,7 @@ class FacultyPageXII extends StatelessWidget {
       Navigator.of(context).pop();
       Navigator.of(context).push(
       new MaterialPageRoute(
-      builder: (BuildContext context) => new SubjectPageScienceXII("Science"),
+      builder: (BuildContext context) => new SubjectPageScienceXI("Science"),
       ),
    ); // Navigator.of(context).pushNamed("/1");
   }
@@ -60,7 +144,7 @@ class FacultyPageXII extends StatelessWidget {
       Navigator.of(context).pop();
       Navigator.of(context).push(
       new MaterialPageRoute(
-      builder: (BuildContext context) => new SubjectPageManagementXII("Management"),
+      builder: (BuildContext context) => new SubjectPageManagementXI("Management"),
       ),
    ); 
   }
@@ -79,7 +163,7 @@ class FacultyPageXII extends StatelessWidget {
       Navigator.of(context).pop();
       Navigator.of(context).push(
       new MaterialPageRoute(
-      builder: (BuildContext context) => new SubjectPageHumanitiesXII("Humanities"),
+      builder: (BuildContext context) => new SubjectPageHumanitiesXI("Humanities"),
       ),
       );
       } 
@@ -91,6 +175,4 @@ class FacultyPageXII extends StatelessWidget {
     ]
     ),
     ),
-    );
-  }
-}
+    */

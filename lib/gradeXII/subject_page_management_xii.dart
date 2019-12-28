@@ -1,204 +1,252 @@
 import 'package:flutter/material.dart';
-
+import 'package:simple_app/SubjectManagementXII/subjects_account_xii.dart';
+import 'package:simple_app/SubjectManagementXII/subjects_businessstudies_xii.dart';
+import 'package:simple_app/SubjectManagementXII/subjects_computerscience_xii.dart';
+import 'package:simple_app/SubjectManagementXII/subjects_economics_xii.dart';
+import 'package:simple_app/SubjectManagementXII/subjects_english_xii.dart';
+import 'package:simple_app/SubjectManagementXII/subjects_hotelmanagement_xii.dart';
+import 'package:simple_app/SubjectManagementXII/subjects_marketing_xii.dart';
+import 'package:simple_app/SubjectManagementXII/subjects_mathematics_xii.dart';
+import 'package:simple_app/SubjectManagementXII/subjects_businessmathematics_xii.dart';
 
 class SubjectPageManagementXII extends StatelessWidget {
-  final String chapters;
+  final String faculty;
 
-  SubjectPageManagementXII(this.chapters);
+  SubjectPageManagementXII(this.faculty);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(
-        title: new Text(chapters),
+        title: new Text(faculty),
       ),
-      body: Center(
-        child: ListView(
-  padding: const EdgeInsets.all(8),
-  children: <Widget>[
-    new Text("Subjects",
-    style: TextStyle(
-      backgroundColor: Colors.blue,
-      fontSize: 25.0,
-    ),
-    ),
-
-    new Divider(),
-    
-    new ListTile(
-      title: new Text("English",
-      style: TextStyle(
-      backgroundColor: Colors.red,
-      fontSize: 35.0,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              // For Physics.................
+              Card(
+                child: ListTile(
+                  leading: Icon(
+                    Icons.mail,
+                    color: Colors.red,
+                  ),
+                  title: Text(
+                    "English",
+                    style: TextStyle(
+                      fontSize: 20.0,
+                    ),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).pop();
+                    Navigator.of(context).push(
+                      new MaterialPageRoute(
+                        builder: (BuildContext context) =>
+                            new ChapterPageEnglishXII("English"),
+                      ),
+                    );
+                  },
+                ),
+              ),
+              // For Physics..........
+              Card(
+                child: ListTile(
+                  leading: Icon(
+                    Icons.mail,
+                    color: Colors.red,
+                  ),
+                  title: Text(
+                    "Marketing",
+                    style: TextStyle(
+                      fontSize: 20.0,
+                    ),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).pop();
+                    Navigator.of(context).push(
+                      new MaterialPageRoute(
+                        builder: (BuildContext context) =>
+                            new ChapterPageMarketingXII("Marketing"),
+                      ),
+                    );
+                  },
+                ),
+              ),
+              // For Chemistry..........
+              Card(
+                child: ListTile(
+                  leading: Icon(
+                    Icons.mail,
+                    color: Colors.red,
+                  ),
+                  title: Text(
+                    "Accountancy",
+                    style: TextStyle(
+                      fontSize: 20.0,
+                    ),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).pop();
+                    Navigator.of(context).push(
+                      new MaterialPageRoute(
+                        builder: (BuildContext context) =>
+                            new ChapterPageAccountXII("Accountancy"),
+                      ),
+                    );
+                  },
+                ),
+              ),
+              // For Biology...........
+              Card(
+                child: ListTile(
+                  leading: Icon(
+                    Icons.mail,
+                    color: Colors.red,
+                  ),
+                  title: Text(
+                    "Economics",
+                    style: TextStyle(
+                      fontSize: 20.0,
+                    ),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).pop();
+                    Navigator.of(context).push(
+                      new MaterialPageRoute(
+                        builder: (BuildContext context) =>
+                            new ChapterPageEconnomicsXII("Economics"),
+                      ),
+                    );
+                  },
+                ),
+              ),
+              // For Mathematics............
+              Card(
+                child: ListTile(
+                  leading: Icon(
+                    Icons.mail,
+                    color: Colors.red,
+                  ),
+                  title: Text(
+                    "Business Studies",
+                    style: TextStyle(
+                      fontSize: 20.0,
+                    ),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).pop();
+                    Navigator.of(context).push(
+                      new MaterialPageRoute(
+                        builder: (BuildContext context) =>
+                            new ChapterPageBusinessXII("Business Studies"),
+                      ),
+                    );
+                  },
+                ),
+              ),
+              // For Computer Science............
+              Card(
+                child: ListTile(
+                  leading: Icon(
+                    Icons.mail,
+                    color: Colors.red,
+                  ),
+                  title: Text(
+                    "Computer Science",
+                    style: TextStyle(
+                      fontSize: 20.0,
+                    ),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).pop();
+                    Navigator.of(context).push(
+                      new MaterialPageRoute(
+                        builder: (BuildContext context) =>
+                            new ChapterPageComputerScienceXII(
+                                "Computer Science"),
+                      ),
+                    );
+                  },
+                ),
+              ),
+              // For Computer Science............
+              Card(
+                child: ListTile(
+                  leading: Icon(
+                    Icons.mail,
+                    color: Colors.red,
+                  ),
+                  title: Text(
+                    "Hotel Management",
+                    style: TextStyle(
+                      fontSize: 20.0,
+                    ),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).pop();
+                    Navigator.of(context).push(
+                      new MaterialPageRoute(
+                        builder: (BuildContext context) =>
+                            new ChapterPageHotelManagementXII(
+                                "Hotel Management"),
+                      ),
+                    );
+                  },
+                ),
+              ),
+              // For Computer Science............
+              Card(
+                child: ListTile(
+                  leading: Icon(
+                    Icons.mail,
+                    color: Colors.red,
+                  ),
+                  title: Text(
+                    "Mathematics",
+                    style: TextStyle(
+                      fontSize: 20.0,
+                    ),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).pop();
+                    Navigator.of(context).push(
+                      new MaterialPageRoute(
+                        builder: (BuildContext context) =>
+                            new ChapterPageMathematicsXII("Mathematics"),
+                      ),
+                    );
+                  },
+                ),
+              ),
+              // For Computer Science............
+              Card(
+                child: ListTile(
+                  leading: Icon(
+                    Icons.mail,
+                    color: Colors.red,
+                  ),
+                  title: Text(
+                    "Business Mathematics",
+                    style: TextStyle(
+                      fontSize: 20.0,
+                    ),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).pop();
+                    Navigator.of(context).push(
+                      new MaterialPageRoute(
+                        builder: (BuildContext context) =>
+                            new ChapterPageBusinessMathematicsXII(
+                                "Business Mathematics"),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
-      ),
-      onTap: () {
-      Navigator.of(context).pop();
-      Navigator.of(context).push(
-      new MaterialPageRoute(
-      builder: (BuildContext context) => new SubjectPageManagementXII("English"),
-      ),
-   ); 
-  }
-  ),
-
-  new Divider(),
-
-  new ListTile(
-      title: new Text("Accountancy",
-      style: TextStyle(
-      backgroundColor: Colors.red,
-      fontSize: 35.0,
-      ),
-      ),
-      onTap: () {
-      Navigator.of(context).pop();
-      Navigator.of(context).push(
-      new MaterialPageRoute(
-      builder: (BuildContext context) => new SubjectPageManagementXII("Accountancy"),
-      ),
-   ); 
-  }
-  ),
-
-  new Divider(),
-
-    new ListTile(
-      title: new Text("Marketing",
-      style: TextStyle(
-      backgroundColor: Colors.red,
-      fontSize: 35.0,
-      ),
-      ),
-      onTap: () {
-      Navigator.of(context).pop();
-      Navigator.of(context).push(
-      new MaterialPageRoute(
-      builder: (BuildContext context) => new SubjectPageManagementXII("Marketing"),
-      ),
-   ); 
-  }
-  ),
-
-  new Divider(),
-
-    new ListTile(
-      title: new Text("Business Mathematics",
-      style: TextStyle(
-      backgroundColor: Colors.red,
-      fontSize: 35.0,
-      ),
-      ),
-      onTap: () {
-      Navigator.of(context).pop();
-      Navigator.of(context).push(
-      new MaterialPageRoute(
-      builder: (BuildContext context) => new SubjectPageManagementXII("Business Mathematics"),
-      ),
-   ); 
-  }
-  ),
-
-  new Divider(),
-
-    new ListTile(
-      title: new Text("Economics",
-      style: TextStyle(
-        backgroundColor: Colors.red,
-        fontSize: 35.0,
-      ),
-      ),
-      onTap: () {
-      Navigator.of(context).pop();
-      Navigator.of(context).push(
-      new MaterialPageRoute(
-      builder: (BuildContext context) => new SubjectPageManagementXII("Economics"),
-      ),
-   ); 
-  }
-  ),
-
-  new Divider(),
-
-  new ListTile(
-      title: new Text("Business Studies",
-      style: TextStyle(
-        backgroundColor: Colors.red,
-        fontSize: 35.0,
-      ),
-      ),
-      onTap: () {
-      Navigator.of(context).pop();
-      Navigator.of(context).push(
-      new MaterialPageRoute(
-      builder: (BuildContext context) => new SubjectPageManagementXII("Business Studies"),
-      ),
-   ); 
-  }
-  ),
-
-  new Divider(),
-
-  new ListTile(
-      title: new Text("Hotel Management",
-      style: TextStyle(
-        backgroundColor: Colors.red,
-        fontSize: 35.0,
-      ),
-      ),
-      onTap: () {
-      Navigator.of(context).pop();
-      Navigator.of(context).push(
-      new MaterialPageRoute(
-      builder: (BuildContext context) => new SubjectPageManagementXII("Hotel Management"),
-      ),
-   ); 
-  }
-  ),
-
-  new Divider(),
-
-  new ListTile(
-      title: new Text("Computer Science",
-      style: TextStyle(
-        backgroundColor: Colors.red,
-        fontSize: 35.0,
-      ),
-      ),
-      onTap: () {
-      Navigator.of(context).pop();
-      Navigator.of(context).push(
-      new MaterialPageRoute(
-      builder: (BuildContext context) => new SubjectPageManagementXII("Computer Science"),
-      ),
-   ); 
-  }
-  ),
-  
-  new Divider(),
-
-  new ListTile(
-      title: new Text("Mathematics",
-      style: TextStyle(
-        backgroundColor: Colors.red,
-        fontSize: 35.0,
-      ),
-      ),
-      onTap: () {
-      Navigator.of(context).pop();
-      Navigator.of(context).push(
-      new MaterialPageRoute(
-      builder: (BuildContext context) => new SubjectPageManagementXII("Basic Mathematics"),
-      ),
-   ); 
-  }
-  ),
-  
-  new Divider(),
-
-
-  ],
-),
-    ),
-  );
+    );
   }
 }
